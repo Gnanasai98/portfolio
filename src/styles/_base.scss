@@ -1,0 +1,383 @@
+// Import optimized Google Fonts with reduced weight
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  
+  @include mobile {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  
+  @include mobile {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  
+  @include mobile {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+  
+  @include mobile {
+    font-size: var(--font-size-xl);
+  }
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--muted-text);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+  
+  &:hover {
+    color: var(--secondary-color);
+  }
+}
+
+// Utility Classes
+.container {
+  @include container;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+// Button Styles
+.btn {
+  @include button-base;
+  gap: var(--spacing-sm);
+  
+  &.btn-primary {
+    @include button-primary;
+  }
+  
+  &.btn-outline {
+    @include button-outline;
+  }
+  
+  &.btn-sm {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+  
+  &.btn-lg {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-lg);
+  }
+}
+
+// Card Styles
+.card {
+  @include card-base;
+  padding: var(--spacing-xl);
+  
+  &.card-hover {
+    @include card-hover;
+  }
+}
+
+// Flexbox Utilities
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+.flex-between {
+  @include flex-between;
+}
+
+.flex-column {
+  @include flex-column;
+}
+
+.flex-column-center {
+  @include flex-column-center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+// Grid Utilities
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  @include grid-center;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gap-1 {
+  gap: var(--spacing-xs);
+}
+
+.gap-2 {
+  gap: var(--spacing-sm);
+}
+
+.gap-3 {
+  gap: var(--spacing-md);
+}
+
+.gap-4 {
+  gap: var(--spacing-lg);
+}
+
+.gap-5 {
+  gap: var(--spacing-xl);
+}
+
+// Spacing Utilities
+.m-0 { margin: 0; }
+.m-1 { margin: var(--spacing-xs); }
+.m-2 { margin: var(--spacing-sm); }
+.m-3 { margin: var(--spacing-md); }
+.m-4 { margin: var(--spacing-lg); }
+.m-5 { margin: var(--spacing-xl); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--spacing-xs); }
+.p-2 { padding: var(--spacing-sm); }
+.p-3 { padding: var(--spacing-md); }
+.p-4 { padding: var(--spacing-lg); }
+.p-5 { padding: var(--spacing-xl); }
+
+// Color Utilities
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.text-muted {
+  color: var(--muted-text);
+}
+
+.text-light {
+  color: var(--light-text);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.bg-light {
+  background-color: var(--light-bg);
+}
+
+// Animation Utilities
+.fade-in {
+  @include fade-in;
+}
+
+.hover-lift {
+  @include hover-lift;
+}
+
+// Responsive Utilities
+.hide-mobile {
+  @include mobile {
+    display: none;
+  }
+}
+
+.hide-desktop {
+  @include desktop {
+    display: none;
+  }
+}
+
+.show-mobile {
+  display: none;
+  
+  @include mobile {
+    display: block;
+  }
+}
+
+// Smooth Scrolling
+.smooth-scroll {
+  @include smooth-scroll;
+}
+
+// Loading Animation
+.loading {
+  @include loading-spinner;
+}
+
+// Selection Style
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+// Focus Styles
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+// Scrollbar Styles
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+// Image optimization
+img {
+  max-width: 100%;
+  height: auto;
+  loading: lazy;
+}
+
+// Performance optimizations
+* {
+  will-change: auto;
+}
+
+.hero, .projects, .skills, .contact {
+  contain: layout style paint;
+}
